@@ -8,20 +8,20 @@ Now you need some way to tell Argo CD how to find your three Nginx applications.
 
 Create a new Application from the GUI called my-apps with the following configuration:
 
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: my-apps
-spec:
-  destination:
-    namespace: default
-    server: 'https://kubernetes.default.svc'
-  source:
-    path: argocd/argocd-apps
-    repoURL: 'https://github.com/ubijsk/argocd-example-asset.git'
-    targetRevision: HEAD
-  project: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+apiVersion: argoproj.io/v1alpha1  
+kind: Application  
+metadata:  
+  name: my-apps  
+spec:  
+  destination:  
+    namespace: default  
+    server: 'https://kubernetes.default.svc'  
+  source:  
+    path: argocd/argocd-apps  
+    repoURL: 'https://github.com/ubijsk/argocd-example-asset.git'  
+    targetRevision: HEAD  
+  project: default  
+  syncPolicy:  
+    automated:  
+      prune: true  
+      selfHeal: true  
